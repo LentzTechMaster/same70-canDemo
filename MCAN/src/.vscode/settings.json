@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "conf_mcan.h": "c",
+        "conf_board.h": "c",
+        "asf.h": "c",
+        "stdio_serial.h": "c",
+        "mcan.h": "c",
+        "pmc.h": "c",
+        "same70_can_driver.h": "c",
+        "genclk.h": "c",
+        "timestamp-buffer.h": "c",
+        "circular-byte-buffer.h": "c"
+    }
+}
