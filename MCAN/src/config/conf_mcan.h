@@ -67,7 +67,7 @@
 /** Range: 1..16 */     
 #define CONF_MCAN1_TX_FIFO_QUEUE_NUM     1     
 /** Range: 1..32 */        
-#define CONF_MCAN1_TX_EVENT_FIFO         (CONF_MCAN1_TX_BUFFER_NUM+CONF_MCAN1_TX_FIFO_QUEUE_NUM)             
+#define CONF_MCAN1_TX_EVENT_FIFO         (CONF_MCAN1_TX_BUFFER_NUM + CONF_MCAN1_TX_FIFO_QUEUE_NUM)             
 /** Range: 1..128 */
 #define CONF_MCAN1_RX_STANDARD_ID_FILTER_NUM     32    
 /** Range: 1..64 */
@@ -84,8 +84,8 @@
  */
 /** Nominal bit Baud Rate Prescaler */
 //#define CONF_MCAN_NBTP_NBRP_VALUE    2
-//The UPLL Clock has been configured to 40MHz (line 273 of mcan.c), so this value is changed from 2 to 3
-#define CONF_MCAN_NBTP_NBRP_VALUE      7
+//The UPLL Clock has been configured in the mcan driver to run at 80 MHz in MCANx_configure(). We divide it by 8 to get 10 MHz.
+#define CONF_MCAN_NBTP_NBRP_VALUE      7//7 correspond to a division by 8
 /** Nominal bit (Re)Synchronization Jump Width */
 //#define CONF_MCAN_NBTP_NSJW_VALUE    3
 #define CONF_MCAN_NBTP_NSJW_VALUE      3
