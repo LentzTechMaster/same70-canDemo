@@ -1,0 +1,6 @@
+[submodule "MCAN/src/dependencies/c-utils"]
+	path = MCAN/src/dependencies/c-utils
+	url = https://github.com/LentzTechMaster/c-utils.git
+[submodule "MCAN/src/dependencies/same70-can"]
+	path = MCAN/src/dependencies/same70-can
+	url = https://github.com/LentzTechMaster/same70-can.git

@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "circular-byte-buffer.h": "c",
+        "timestamp-buffer.h": "c",
+        "same70_can_driver.h": "c",
+        "circular-buffer-ultimate.h": "c",
+        "string.h": "c",
+        "stdint.h": "c",
+        "stdio_serial.h": "c",
+        "compiler.h": "c",
+        "stdbool.h": "c",
+        "circular-buffer-flex.h": "c"
+    }
+}
