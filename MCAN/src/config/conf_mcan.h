@@ -85,7 +85,8 @@
 /** Nominal bit Baud Rate Prescaler */
 //#define CONF_MCAN_NBTP_NBRP_VALUE    2
 //The UPLL Clock has been configured in the mcan driver to run at 80 MHz in MCANx_configure(). We divide it by 8 to get 10 MHz.
-#define CONF_MCAN_NBTP_NBRP_VALUE      3//7 correspond to a division by 8
+//This is ONLY used for basic initialisation of mcan.
+#define CONF_MCAN_NBTP_NBRP_VALUE      7//7 correspond to a division by 8
 /** Nominal bit (Re)Synchronization Jump Width */
 //#define CONF_MCAN_NBTP_NSJW_VALUE    3
 #define CONF_MCAN_NBTP_NSJW_VALUE      3

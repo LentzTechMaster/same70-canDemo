@@ -97,8 +97,9 @@ int main(void)
 	board_init();
 
 	configure_console();
-    mcan0_configure(500*1000, 64, 64);
-    mcan1_configure(500*1000, 64, 64);
+	#define speed MCAN_BR_1_Mbps
+    mcan0_configure(speed, 64, 64);
+    mcan1_configure(speed, 64, 64);
 	
 	SysTick_Config(sysclk_get_cpu_hz() / 1000);
 	printf("________________________START_____________________________________\r\n");
@@ -107,14 +108,19 @@ int main(void)
 		printf("---------------------------------%i--------------------------------\r\n", a);
 		a++;
 		
-		mdelay(50);
+		mdelay(500);
 		
 		mcan1_get_message_available();
 		
 		#define data_len 4
+		
 		for (uint8_t i = 0; i < 64; i++)
 		{
-			mcan0_send_message(i, tx_message, data_len, false, false);
+			uint8_t st = mcan0_send_message(i, tx_message, data_len, false, false);
+			if(st == CBF_BUFFER_FULL)
+			{
+				printf("SEND CANCELED BUFFER FULL\r\n");
+			}
 		}
 	
 		for (uint32_t i = 0; i < data_len; i++)

@@ -9,7 +9,8 @@
         "stdio_serial.h": "c",
         "compiler.h": "c",
         "stdbool.h": "c",
-        "circular-buffer-flex.h": "c"
+        "circular-buffer-flex.h": "c",
+        "genclk.h": "c"
     },
     "cSpell.words": [
         "recomended"
