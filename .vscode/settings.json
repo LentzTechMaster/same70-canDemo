@@ -13,6 +13,9 @@
         "genclk.h": "c"
     },
     "cSpell.words": [
+        "baudrates",
+        "kbps",
+        "mcan",
         "recomended"
     ]
 }
