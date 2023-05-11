@@ -1,38 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type='text/xsl' href='ConversionLog.xslt'?>
-<conversion conversiontitle="Upgrade Report - Atmel Software Framework Upgrade Log" subtitle1="Upgrading Modules From" subtitle2="to" date="Thursday, 15 October 2020" time="8:04 AM">
+<conversion conversiontitle="Upgrade Report - Atmel Software Framework Upgrade Log" subtitle1="Upgrading Modules From" subtitle2="to" date="Thursday, 11 May 2023" time="14:34">
   <general>
-    <log timestamp="10-15-2020 08-04-36">
+    <log timestamp="05-11-2023 14-34-54">
       <message>Unloading project</message>
     </log>
-    <log timestamp="10-15-2020 08-04-37">
+    <log timestamp="05-11-2023 14-34-54">
       <message>Project unload complete.</message>
     </log>
-    <log timestamp="10-15-2020 08-05-14">
+    <log timestamp="05-11-2023 14-36-39">
       <message>Backing up of project started.</message>
     </log>
-    <log timestamp="10-15-2020 08-05-15">
+    <log timestamp="05-11-2023 14-36-40">
       <message>Project backup completed.</message>
     </log>
-    <log timestamp="10-15-2020 08-05-15">
+    <log timestamp="05-11-2023 14-36-40">
       <message>Reloading project after backup.</message>
     </log>
-    <log timestamp="10-15-2020 08-05-15">
+    <log timestamp="05-11-2023 14-36-40">
       <message>Project reload complete.</message>
     </log>
-    <log timestamp="10-15-2020 08-05-16">
+    <log timestamp="05-11-2023 14-36-40">
       <message>Upgrading of project started.</message>
     </log>
-    <log timestamp="10-15-2020 08-06-14">
+    <log timestamp="05-11-2023 14-37-25">
       <message>Project upgrade complete</message>
     </log>
   </general>
-  <revert versiontext="3.47.0" description="Reverting from version">
+  <revert versiontext="3.49.1" description="Reverting from version">
     <moduleinfo name="SAME70-XPLD">
       <action description="Delete framework file 'src\ASF\sam\boards\same70_xplained\same70_xplained.h'." result="SUCCESS" resulttext="" />
       <action description="Remove folder '../src/ASF/sam/boards/same70_xplained' from include search path." result="SUCCESS" resulttext="" />
       <action description="Remove folder '../src/ASF/sam/boards' from include search path." result="SUCCESS" resulttext="" />
-      <action description="Remove defined symbol '__SAME70Q21B__'." result="SUCCESS" resulttext="" />
+      <action description="Remove defined symbol '__SAME70Q21B__'." result="INFO" resulttext="Symbol '__SAME70Q21B__' is not defined. Remove Define Symbol operation cannot be performed." />
       <action description="Remove defined symbol 'BOARD=SAME70_XPLAINED'." result="SUCCESS" resulttext="" />
       <action description="Remove Assembler Flag '-D__SAME70Q21B__'." result="SUCCESS" resulttext="" />
       <action description="Remove Assembler Flag '-DBOARD=SAME70_XPLAINED'." result="SUCCESS" resulttext="" />
@@ -306,7 +306,7 @@
       <action description="Remove folder '../src/ASF/sam/boards/same70_xplained' from include search path." result="SUCCESS" resulttext="" />
     </moduleinfo>
   </revert>
-  <revert versiontext="3.47.0" description="Reverting from version">
+  <revert versiontext="3.49.1" description="Reverting from version">
     <moduleinfo name="Integer printf for SAM">
       <action description="Remove defined symbol 'printf=iprintf'." result="SUCCESS" resulttext="" />
       <action description="Remove Assembler Flag '-Dprintf=iprintf'." result="SUCCESS" resulttext="" />
@@ -325,7 +325,7 @@
       <action description="Remove '../src/ASF/thirdparty/CMSIS/Lib/GCC from library search path." result="SUCCESS" resulttext="" />
     </moduleinfo>
   </revert>
-  <update versiontext="3.49.1" description="Upgrading to version">
+  <update versiontext="3.52.0" description="Upgrading to version">
     <moduleinfo name="SAME70-XPLD">
       <action description="Import framework file as 'src\ASF\sam\boards\same70_xplained\same70_xplained.h'." result="SUCCESS" resulttext="" />
       <action description="Add folder '../src/ASF/sam/boards/same70_xplained' to include search path." result="SUCCESS" resulttext="" />
@@ -604,7 +604,7 @@
       <action description="Add folder '../src/ASF/sam/boards/same70_xplained' to include search path." result="SUCCESS" resulttext="" />
     </moduleinfo>
   </update>
-  <update versiontext="3.49.1" description="Upgrading to version">
+  <update versiontext="3.52.0" description="Upgrading to version">
     <moduleinfo name="CAN - Control Area Network Controller">
       <action description="Import framework file as 'src\ASF\sam\drivers\mcan\mcan.c'." result="SUCCESS" resulttext="" />
       <action description="Import framework file as 'src\ASF\sam\drivers\mcan\mcan.h'." result="SUCCESS" resulttext="" />

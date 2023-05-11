@@ -268,6 +268,7 @@ void mcan_init(struct mcan_module *const module_inst, Mcan *hw,
 	module_inst->hw = hw;
 
 	pmc_disable_pck(PMC_PCK_5);
+
 	pmc_switch_pck_to_pllack(PMC_PCK_5, PMC_PCK_PRES(9));
 	pmc_enable_pck(PMC_PCK_5);
 
@@ -277,15 +278,13 @@ void mcan_init(struct mcan_module *const module_inst, Mcan *hw,
 
 	/* Configuration Change Enable. */
 	hw->MCAN_CCCR |= MCAN_CCCR_CCE;
-	
+
 	/* Initialize the message memory address. */
 	_mcan_message_memory_init(hw);
 
 	/* Set the configuration. */
 	_mcan_set_configuration(hw, config);
 
-	
-	
 	/* Enable the interrupt setting which no need change. */
 	hw->MCAN_ILE = MCAN_ILE_EINT0 | MCAN_ILE_EINT1;
 	hw->MCAN_TXBTIE = 0xFFFFFFFFul;

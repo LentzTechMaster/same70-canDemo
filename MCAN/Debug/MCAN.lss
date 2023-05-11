@@ -2383,6 +2383,7 @@ void mcan_init(struct mcan_module *const module_inst, Mcan *hw,
   400f2e:	2005      	movs	r0, #5
   400f30:	4b14      	ldr	r3, [pc, #80]	; (400f84 <mcan_init+0x68>)
   400f32:	4798      	blx	r3
+
 	pmc_switch_pck_to_pllack(PMC_PCK_5, PMC_PCK_PRES(9));
   400f34:	2190      	movs	r1, #144	; 0x90
   400f36:	2005      	movs	r0, #5
@@ -2407,7 +2408,7 @@ void mcan_init(struct mcan_module *const module_inst, Mcan *hw,
   400f4c:	f043 0202 	orr.w	r2, r3, #2
   400f50:	68bb      	ldr	r3, [r7, #8]
   400f52:	619a      	str	r2, [r3, #24]
-	
+
 	/* Initialize the message memory address. */
 	_mcan_message_memory_init(hw);
   400f54:	68b8      	ldr	r0, [r7, #8]
@@ -2421,8 +2422,6 @@ void mcan_init(struct mcan_module *const module_inst, Mcan *hw,
   400f5e:	4b0e      	ldr	r3, [pc, #56]	; (400f98 <mcan_init+0x7c>)
   400f60:	4798      	blx	r3
 
-	
-	
 	/* Enable the interrupt setting which no need change. */
 	hw->MCAN_ILE = MCAN_ILE_EINT0 | MCAN_ILE_EINT1;
   400f62:	68bb      	ldr	r3, [r7, #8]
@@ -6177,17 +6176,17 @@ static inline void mcan_get_config_defaults(
 #if (SAMV71B || SAME70B || SAMV70B)
 	config->delay_compensation_filter_window_length = 0;
 #endif
-	config->nonmatching_frames_action_standard = MCAN_NONMATCHING_FRAMES_FIFO_0;
+	config->nonmatching_frames_action_standard = MCAN_NONMATCHING_FRAMES_REJECT;
   4024c2:	687b      	ldr	r3, [r7, #4]
-  4024c4:	2200      	movs	r2, #0
+  4024c4:	2202      	movs	r2, #2
   4024c6:	741a      	strb	r2, [r3, #16]
 	config->nonmatching_frames_action_extended = MCAN_NONMATCHING_FRAMES_REJECT;
   4024c8:	687b      	ldr	r3, [r7, #4]
   4024ca:	2202      	movs	r2, #2
   4024cc:	745a      	strb	r2, [r3, #17]
-	config->remote_frames_standard_reject = false;
+	config->remote_frames_standard_reject = true;
   4024ce:	687b      	ldr	r3, [r7, #4]
-  4024d0:	2200      	movs	r2, #0
+  4024d0:	2201      	movs	r2, #1
   4024d2:	749a      	strb	r2, [r3, #18]
 	config->remote_frames_extended_reject = true;
   4024d4:	687b      	ldr	r3, [r7, #4]
@@ -6943,7 +6942,7 @@ void can_configure(enum can_line line, uint32_t baudrate, uint32_t rx_buffer_siz
   402916:	4b32      	ldr	r3, [pc, #200]	; (4029e0 <can_configure+0x1e0>)
   402918:	4798      	blx	r3
 	// This was firstly changed to "pmc_switch_pck_to_pllack(PMC_PCK_5, PMC_PCK_PRES(9));" in the mcan_init function above.
-	//It is recomended in the datasheet to use upllck as it is less subject to change. It is running at 480 MHz.
+	//It is recommended in the datasheet to use upllck as it is less subject to change. It is running at 480 MHz.
 	pmc_disable_pck(PMC_PCK_5);
   40291a:	2005      	movs	r0, #5
   40291c:	4b31      	ldr	r3, [pc, #196]	; (4029e4 <can_configure+0x1e4>)

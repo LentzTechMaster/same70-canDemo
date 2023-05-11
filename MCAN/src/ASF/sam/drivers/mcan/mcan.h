@@ -672,9 +672,9 @@ static inline void mcan_get_config_defaults(
 #if (SAMV71B || SAME70B || SAMV70B)
 	config->delay_compensation_filter_window_length = 0;
 #endif
-	config->nonmatching_frames_action_standard = MCAN_NONMATCHING_FRAMES_FIFO_0;
+	config->nonmatching_frames_action_standard = MCAN_NONMATCHING_FRAMES_REJECT;
 	config->nonmatching_frames_action_extended = MCAN_NONMATCHING_FRAMES_REJECT;
-	config->remote_frames_standard_reject = false;
+	config->remote_frames_standard_reject = true;
 	config->remote_frames_extended_reject = true;
 	config->extended_id_mask = 0x1FFFFFFF;
 	config->rx_fifo_0_overwrite = true;

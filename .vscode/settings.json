@@ -10,12 +10,13 @@
         "compiler.h": "c",
         "stdbool.h": "c",
         "circular-buffer-flex.h": "c",
-        "genclk.h": "c"
+        "genclk.h": "c",
+        "sysclk.h": "c",
+        "pmc.h": "c"
     },
     "cSpell.words": [
         "baudrates",
         "kbps",
-        "mcan",
-        "recomended"
+        "mcan"
     ]
 }

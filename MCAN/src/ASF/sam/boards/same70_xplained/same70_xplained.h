@@ -342,7 +342,7 @@
 /** AFEC channel for potentiometer */
 #define AFEC_CHANNEL_POTENTIOMETER  AFEC_CHANNEL_0
 
-#define MCAN_MODULE              MCAN0
+#define MCAN_MODULE              MCAN1
 /*----------------------------------------------------------------------------*/
 /**
  * \page same70_xpld_CAN "SAME70-XPLD - CAN"
